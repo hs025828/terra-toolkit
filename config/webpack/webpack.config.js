@@ -61,7 +61,6 @@ const webpackConfig = (options, env, argv) => {
             {
               loader: 'css-loader',
               options: {
-                modules: false,
                 sourceMap: true,
                 importLoaders: 2,
               },
@@ -173,21 +172,7 @@ const webpackConfig = (options, env, argv) => {
     devtool: false,
     plugins: [
       new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json'] }),
-    ],
-    optimization: {
-      minimizer: [
-        new TerserPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true,
-          terserOptions: {
-            compress: {
-              typeofs: false,
-            },
-          },
-        }),
-      ],
-    },
+    ]
   });
 };
 
