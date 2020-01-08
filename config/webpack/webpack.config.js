@@ -63,6 +63,9 @@ const webpackConfig = (options, env, argv) => {
               options: {
                 sourceMap: true,
                 importLoaders: 2,
+                modules: {
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                },
               },
             },
             {
